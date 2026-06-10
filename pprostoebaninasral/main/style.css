@@ -331,6 +331,7 @@ header .down .center a:hover {
 }
 .katalog_off .center .right .center_right .pervie .first .napolnenie {
   width: 100%;
+  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -422,7 +423,5 @@ header .down .center a:hover {
 }
 .company .center_company .right div:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 10px 20px rgba(151, 151, 151, 0.3);
-}
-
-/*# sourceMappingURL=style.css.map */
+  box-shadow: 0px 10px 20px var(--shadow);
+}/*# sourceMappingURL=style.css.map */
