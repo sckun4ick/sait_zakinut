@@ -28,7 +28,30 @@ let mal = [
     }   
 ]
 
+let artForSlider = [
+    {
+        img_slider: "1",
+        title:"Молочная продукция"
+    },
+
+    {
+        img_slider: "2",
+        title:"Мясная продукция"
+    },
+
+    {
+        img_slider: "3",
+        title:"Овощи"
+    },
+
+    {
+        img_slider: "4",
+        title:"Ягоды"
+    }
+]
+
 let catalogImages = catalog_butt.querySelectorAll('img.list');
+let sliderCarts = catalog_butt.querySelectorAll('articles');
 
 catalog_butt.addEventListener('click', () => {
     
@@ -44,6 +67,15 @@ catalog_butt.addEventListener('click', () => {
         img.classList.toggle('active');
     });
 });
+
+sliderCarts.innerHTML = artForSlider.map(
+    item => `<article>
+                <img src="resource/slider_popular/slider-img (${item.img_slider}).png" alt="">
+                <div>
+                    <h3>${item.title}</h3>
+                </div>
+            </article>`,
+).join('');
 
 main_them.innerHTML = mal.map(
     item => `<article class="article${item.mal_active}">
