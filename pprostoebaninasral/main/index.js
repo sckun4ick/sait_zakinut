@@ -2,8 +2,6 @@ let catalog = document.getElementById('katalogoff');
 let catalog_butt = document.getElementById('catalog');
 let catalog_stat = false;
 
-let main_them = document.getElementById('nacucanil')
-
 //Knopochki
 let butt_down = document.getElementById('down_butt')
 let butt_up = document.getElementById('up_butt')
@@ -68,14 +66,56 @@ catalog_butt.addEventListener('click', () => {
     });
 });
 
-sliderCarts.innerHTML = artForSlider.map(
-    item => `<article>
+const sliderCart = document.getElementById('articles')
+
+sliderCart.innerHTML = artForSlider.map(
+    item => `<article class="artMove">
                 <img src="resource/slider_popular/slider-img (${item.img_slider}).png" alt="">
                 <div>
                     <h3>${item.title}</h3>
                 </div>
             </article>`,
 ).join('');
+
+const scrollBarr = document.querySelector('.scroll_barr')
+const scrollTap = document.querySelector('.scroll_tap')
+
+let articleMoves = document.querySelectorAll(".artMove")
+
+let isDragging = false
+let offsetX, offsetY
+
+scrollTap.addEventListener('mousedown', (e) =>{
+    isDragging = true;
+    offsetX = e.clientX - scrollTap.getBoundingClientRect().left;
+    document.body.style.userSelect = 'none'; 
+})
+
+document.addEventListener('mousemove', (e) =>{
+    if (!isDragging) return
+
+    const barrRect = scrollBarr.getBoundingClientRect()
+    
+    let x = e.clientX - barrRect.left - offsetX
+
+    const minX = 0;
+    const maxX = scrollBarr.clientWidth - scrollTap.clientWidth
+
+    x = Math.max(minX, Math.min(x, maxX))
+    scrollTap.style.left = `${x}px`
+
+    const progress = x / maxX   
+    const maxScroll = sliderCart.scrollWidth - sliderCart.clientWidth
+    
+    sliderCart.scrollLeft = progress * maxScroll
+})
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    document.body.style.userSelect = ''
+})
+
+let main_them = document.getElementById('nacucanil')
 
 main_them.innerHTML = mal.map(
     item => `<article class="article${item.mal_active}">

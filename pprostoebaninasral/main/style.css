@@ -626,4 +626,110 @@ header .down .center a:hover {
   border: 1px solid var(--green);
   background: var(--green);
   border-radius: 100px;
+}
+
+.slider {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--plashka-gray);
+}
+.slider .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider .center .title_text {
+  width: 100%;
+  height: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider .center .title_text h1 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 36px;
+}
+.slider .center .title_text a {
+  color: var(--purple);
+  font-family: "inter-regular";
+  font-size: 14px;
+  line-height: 22px;
+  text-align: justify;
+  text-decoration: none;
+  border-bottom: 1px solid var(--green);
+}
+.slider .center .articles {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.slider .center .articles article {
+  width: 23%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  border-radius: 10px;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  transition: 0.5s all ease;
+}
+.slider .center .articles article img {
+  width: 100%;
+  height: 65%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.slider .center .articles article div {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .center .articles article div h3 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.slider .center .articles article:hover {
+  transform: translateY(-5px);
+  box-shadow: 100px 100px 0p var(--shadow);
+}
+.slider .center .scroll_barr {
+  width: 30vw;
+  height: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  border-radius: 100px;
+  background: #b3b3b3;
+}
+.slider .center .scroll_barr .scroll_tap {
+  width: 20%;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--green);
+  cursor: pointer;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
