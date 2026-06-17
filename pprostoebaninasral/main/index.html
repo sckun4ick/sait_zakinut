@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>TDA - Ваше Здоровье, Наша Забота</title>
 </head>
 <body>
     <header>    
@@ -151,61 +151,61 @@
         </div>
     </section>
 
-    <div class="harderSec">
-        <div class="slider">
-            <button>←</button>
-            <div class="slider_article">
-                <article>
-                    <img src="" alt="">
-                    <div class="visible_not">
-                        <h6>${item.title}</h6>
-                        <div class="niz">
-                            <div>
-                                <p>${item.pricePurp}</p>
-                                <h5>${item.price}</h5>
-                            </div>
-                            <button><img src="" alt=""></button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <button>→</button>
-        </div>
+    <section class="product_section">
         <div class="center">
-            <div class="iuwer">
-                <div class="left">
-                    <h2></h2>
-                    <h1></h1>
-                    <h6></h6>
-                    <p></p>
-                    <div>
+            <div class="carousel">
+                <div class="buttons_carousel">
+                    <button class="arrow left">←</button>
+                    <button class="arrow right">→</button>
+                </div>
+            
+                <div class="carousel_items" id="carousel_track">
+                     
+                </div> 
+            </div>
+
+            <div class="product_info">
+                <div class="left_info">
+                    <h1>250 ₽/шт</h1>
+                    <h2>Корнишоны «Кубаночка»</h2>
+                    <p class="subtitle">(1-3 см) 680 г, 1/8</p>
+                    <p class="description">
+                        Корнишоны "Кубаночка" настоящая находка. Огурчики упругие, довольно плотные, очень хрустящие. Рассол в меру пряный с низким содержанием уксуса. Отлично влияют на пищеварение, повышают аппетит. Среди составляющих огурцов есть калий, который необходим для нормальной работоспособности мышц сердца и почек.
+                    </p>
+                    <div class="buttons">
                         <button class="purp">В корзину</button>
-                        <button class="purp">Подробнее</button>
+                        <button class="outline">Подробнее</button>
                     </div>
                 </div>
-                <div class="right">
-                    <div class="verh">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+
+                <div class="right_info">
+                    <div class="circle_container">
+                        <div class="mini_item top"><img src="resource/products/ (1).png" alt=""></div>
+                        <div class="mini_item top-right"><img src="resource/products/ (2).png" alt=""></div>
+                        <div class="mini_item right"><img src="resource/products/ (3).png" alt=""></div>
+                        <div class="mini_item bottom-right"><img src="resource/products/ (4).png" alt=""></div>
+                        <div class="mini_item bottom-left"><img src="resource/products/ (5).png" alt=""></div>
                     </div>
-                    <div class="niz">
-                        <button>←</button>
+
+                    <div class="iside_theme">
+                        <button id="left_circle"><img src="resource/arrow.svg" alt=""></button>
                         <div>
                             <img src="" alt="">
                         </div>
-                        <button>→</button>
+                        <button id="right_circle"><img src="resource/arrow.svg" alt=""></button>
+                    </div>
+
+                    <div class="side_panel">
+                        <div class="icons">
+                            <div><p class="price">1 560 ₽</p> <img src="resource/icons_for_bb/file.svg" alt=""></div>
+                            <div><img src="resource/icons_for_bb/shopping-bag.svg" alt=""></div>
+                            <div><img src="resource/icons_for_bb/user.svg" alt=""></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
-    </div>
+    </section>
 
     <section class="slider">
         <div class="center">
@@ -270,8 +270,51 @@
         </div>
     </section>
 
-    
+    <footer>
+        <div class="verh">
+            <div class="center">
+                <img src="resource/logos/logo.svg" alt="">
+                <ul>
+                    <h3>О компании</h3>
+                    <a href="">Новости</a>
+                    <a href="">Контакты</a>
+                    <a href="">Пользовательское соглашение</a>
+                    <a href="">Политика обработки персональных данных</a>
+                </ul>
 
+                <ul>
+                    <h3>Покупателям</h3>
+                    <a href="">Доставка и оплата</a>
+                    <a href="">Как вернуть</a>
+                    <a href="">Как заказать</a>
+                    <a href="">Программа лояльности</a>
+                    <a href="">Вопросы и ответы</a>
+                    <a href="">Юридическим лицам</a>
+                </ul>
+
+                <div class="dali">
+                    <h3>Подписаться на рассылку актуальных новостей:</h3>
+                    <div>
+                        <input type="text" placeholder="Email">
+                        <button><img src="resource/icons/mail.svg" alt=""><img src="resource/icons/Line 1.svg" alt="">Подписаться</button>
+                    </div>
+                    <h3>Заказывайте товары круглосуточно и задавайте вопросы</h3>
+                    <h1>8 800 123-45-67</h1>
+                </div>
+            </div>
+        </div>
+        <div class="niz">
+            <div class="center">
+                <p>© Интернет-магазин “TDA”</p>
+                <div>
+                    <img src="resource/logos/twitter.svg" alt="">
+                    <img src="resource/logos/facebook.svg" alt="">
+                    <img src="resource/logos/vk.svg" alt="">
+                    <img src="resource/logos/instagramm.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

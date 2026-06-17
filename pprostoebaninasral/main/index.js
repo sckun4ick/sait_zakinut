@@ -1,3 +1,4 @@
+
 let catalog = document.getElementById('katalogoff');
 let catalog_butt = document.getElementById('catalog');
 let catalog_stat = false;
@@ -45,8 +46,180 @@ let artForSlider = [
     {
         img_slider: "4",
         title:"Ягоды"
-    }
+    },
+
+    {
+        img_slider: "1",
+        title:"Молочная продукция"
+    },
+
+    {
+        img_slider: "2",
+        title:"Мясная продукция"
+    },
+
+    {
+        img_slider: "3",
+        title:"Овощи"
+    },
+
+    {
+        img_slider: "4",
+        title:"Ягоды"
+    },
 ]
+
+let aricle_firstSlider = [
+    {
+        img_num:'1',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'2',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'3',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'4',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'5',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'6',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'7',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+
+    {
+        img_num:'8',
+        item_name:'Кетчуп «Томатный „Кубаночка"» 310 г, дойпак 1/20',
+        old_price: '55,00 ₽',
+        new_price: '42,30 ₽'
+    },
+]
+
+
+const carousel = document.getElementById('carousel_track')
+
+carousel.innerHTML = aricle_firstSlider.map(
+    item => `<article>
+                        <img src="resource/products/ (${item.img_num}).png" alt="">
+                        <div class="item_info">
+                            <p>${item.item_name}</p>
+                            <div class="down_section_cart">
+                                <div>
+                                    <h2>${item.old_price}</h2>
+                                    <span>${item.new_price}</span>
+                                </div>
+                                <button>
+                                    <img src="resource/icons/cart.svg" alt="">
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </article>`,
+).join('');
+
+const leftButton = document.querySelector('.arrow.left')
+const rightButton = document.querySelector('.arrow.right')
+
+let move = 0
+
+leftButton.addEventListener('click', () => {
+    if (move < 21){
+        move += 7
+        console.log(`Left Button press: ${move}`)
+        carousel.style.transform = `translateX(${move}vw)`
+        leftButton.style.opacity = '1'
+        rightButton.style.opacity = '1'
+    } else{
+        leftButton.style.opacity = '0.5'
+    }
+
+    
+})
+
+rightButton.addEventListener('click', () => {
+
+    if (move > -21){
+        move -= 7
+        console.log(`Right Button press: ${move}`)
+        carousel.style.transform = `translateX(${move}vw)`
+        rightButton.style.opacity = '1'
+        leftButton.style.opacity = '1'
+    } else{
+        rightButton.style.opacity = '0.5'
+    }
+    
+})
+
+const miniItems = document.querySelectorAll('.mini_item');
+const mainImg = document.querySelector('.iside_theme div img');
+const btnLeft = document.getElementById('left_circle');
+const btnRight = document.getElementById('right_circle');
+
+let currentIndex = 0;
+const totalItems = miniItems.length;
+
+const imagesSrc = Array.from(miniItems).map(item => item.querySelector('img').src);
+
+
+function updataPrikola() {
+    mainImg.src = imagesSrc[currentIndex];
+    
+    miniItems.forEach(item => item.classList.remove('active'));
+    miniItems[currentIndex].classList.add('active');
+}
+
+updataPrikola();
+
+btnRight.addEventListener('click', () => {
+    if (currentIndex < totalItems - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Если дошли до конца, возвращаемся к первой
+    }
+    updataPrikola();
+});
+
+btnLeft.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalItems - 1; // Если ушли в минус, прыгаем на последнюю
+    }
+    updataPrikola();
+});
+
 
 let catalogImages = catalog_butt.querySelectorAll('img.list');
 let sliderCarts = catalog_butt.querySelectorAll('articles');
