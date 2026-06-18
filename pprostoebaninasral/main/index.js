@@ -127,12 +127,101 @@ let aricle_firstSlider = [
     },
 ]
 
+const arti_napol = [
+    {
+       img: '1', 
+       date: '15.12.2021',
+       title: '«Самое ценное в нашем мире — овощи»'
+    },
+
+    {
+       img: '2', 
+       date: '15.12.2021',
+       title: 'Чувсто вкуса'
+    },
+
+    {
+       img: '3', 
+       date: '15.12.2021',
+       title: '“TDA” установила новый мировой рекорд Гиннесса'
+    },
+
+    {
+       img: '2', 
+       date: '15.12.2021',
+       title: 'Чувсто вкуса'
+    },
+
+    {
+       img: '3', 
+       date: '15.12.2021',
+       title: '“TDA” установила новый мировой рекорд Гиннесса'
+    },
+
+    {
+       img: '1', 
+       date: '15.12.2021',
+       title: '«Самое ценное в нашем мире — овощи»'
+    },
+
+    {
+       img: '3', 
+       date: '15.12.2021',
+       title: '“TDA” установила новый мировой рекорд Гиннесса'
+    },
+
+    {
+       img: '2', 
+       date: '15.12.2021',
+       title: 'Чувсто вкуса'
+    },
+
+    {
+       img: '1', 
+       date: '15.12.2021',
+       title: '«Самое ценное в нашем мире — овощи»'
+    },
+
+    {
+       img: '1', 
+       date: '15.12.2021',
+       title: '«Самое ценное в нашем мире — овощи»'
+    },
+
+    {
+       img: '2', 
+       date: '15.12.2021',
+       title: 'Чувсто вкуса'
+    },
+
+    {
+       img: '3', 
+       date: '15.12.2021',
+       title: '“TDA” установила новый мировой рекорд Гиннесса'
+    }
+]
+
+const sliderNews = document.getElementById('track')
+
+sliderNews.innerHTML = arti_napol.map(
+    item => `<article>
+                    <img src="resource/Новая папка/news_posts (${item.img}).png" alt="">
+                    <div class="center_2">
+                        <div>
+                            <p>${item.date}</p>
+                            <h2>${item.title}</h2>
+                        </div>
+                    </div>
+                </article>
+               
+            </div>`,
+).join('');
 
 const carousel = document.getElementById('carousel_track')
 
 carousel.innerHTML = aricle_firstSlider.map(
     item => `<article>
-                        <img src="resource/products/ (${item.img_num}).png" alt="">
+                        <img src="resource/products/(${item.img_num}).png" alt="">
                         <div class="item_info">
                             <p>${item.item_name}</p>
                             <div class="down_section_cart">
@@ -206,7 +295,7 @@ btnRight.addEventListener('click', () => {
     if (currentIndex < totalItems - 1) {
         currentIndex++;
     } else {
-        currentIndex = 0; // Если дошли до конца, возвращаемся к первой
+        currentIndex = 0;
     }
     updataPrikola();
 });
@@ -215,7 +304,7 @@ btnLeft.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
     } else {
-        currentIndex = totalItems - 1; // Если ушли в минус, прыгаем на последнюю
+        currentIndex = totalItems - 1; 
     }
     updataPrikola();
 });
@@ -358,3 +447,63 @@ butt_up.addEventListener('click', () => {
     updateRound();
     console.log('Поменял кружочек')
 })
+
+const newsTrack = document.getElementById('track');
+const newsLine = document.getElementById('line');
+const newsPipka = document.querySelector('.greenPipka');
+
+let isDraggingNews = false;
+let startXNews, scrollLeftNews;
+
+function updateNewsSlider() {
+    if (!newsTrack || !newsLine || !newsPipka) return;
+    
+    const maxScroll = newsTrack.scrollWidth - newsTrack.clientWidth;
+    const currentScroll = newsTrack.scrollLeft;
+    
+    let progress = 0;
+    if (maxScroll > 0) {
+        progress = currentScroll / maxScroll;
+    }
+    
+    const maxPipkaPos = newsLine.clientWidth - newsPipka.clientWidth;
+    newsPipka.style.left = `${progress * maxPipkaPos}px`;
+}
+
+// Инициализация при загрузке и ресайзе
+window.addEventListener('load', updateNewsSlider);
+window.addEventListener('resize', updateNewsSlider);
+
+if (newsTrack) {
+    newsTrack.addEventListener('scroll', updateNewsSlider);
+}
+
+if (newsPipka && newsLine) {
+    newsPipka.addEventListener('mousedown', (e) => {
+        isDraggingNews = true;
+        startXNews = e.clientX - newsPipka.getBoundingClientRect().left;
+        document.body.style.userSelect = 'none'; 
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDraggingNews) return;
+        
+        const lineRect = newsLine.getBoundingClientRect();
+        let x = e.clientX - lineRect.left - startXNews;
+        
+        const minX = 0;
+        const maxX = newsLine.clientWidth - newsPipka.clientWidth;
+        x = Math.max(minX, Math.min(x, maxX));
+        
+        newsPipka.style.left = `${x}px`;
+        
+        const maxScroll = newsTrack.scrollWidth - newsTrack.clientWidth;
+        const progress = x / (newsLine.clientWidth - newsPipka.clientWidth);
+        newsTrack.scrollLeft = progress * maxScroll;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDraggingNews = false;
+        document.body.style.userSelect = '';
+    });
+}

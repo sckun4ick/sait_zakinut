@@ -332,6 +332,7 @@ header .down .center a:hover {
 }
 .katalog_off .center .right .center_right .pervie .first .napolnenie {
   width: 100%;
+  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -414,7 +415,7 @@ header .down .center a:hover {
 }
 .product_section .carousel .carousel_items article {
   min-width: calc((100% - 120px) / 7);
-  height: 60%;
+  height: 55%;
   align-items: center;
   background: var(--white);
   border-radius: 6px;
@@ -425,8 +426,10 @@ header .down .center a:hover {
 .product_section .carousel .carousel_items article img {
   width: 90%;
   height: auto;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
   border-radius: 6px;
   margin-bottom: 1.7vh;
 }
@@ -486,7 +489,7 @@ header .down .center a:hover {
   transform: translateY(-5px);
 }
 .product_section .carousel .carousel_items article:hover {
-  height: 125%;
+  height: 100%;
   box-shadow: 0px 5px 15px var(--shadow);
 }
 .product_section .carousel .carousel_items article:hover .item_info {
@@ -610,7 +613,8 @@ header .down .center a:hover {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .product_section .product_info .right_info .circle_container .mini_item.top {
   bottom: calc(0vh + var(--vh-for));
@@ -670,8 +674,10 @@ header .down .center a:hover {
 .product_section .product_info .right_info .iside_theme div img {
   width: 80%;
   height: auto;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .product_section .product_info .right_info .side_panel {
   position: absolute;
@@ -1063,7 +1069,8 @@ header .down .center a:hover {
 .slider .center .articles article img {
   width: 100%;
   height: 65%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -1104,6 +1111,135 @@ header .down .center a:hover {
   position: absolute;
   left: 0;
   top: 50%;
+  transform: translateY(-50%);
+}
+
+.news {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.news .center .title_text {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.news .center .title_text h1 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 36px;
+}
+.news .center .title_text a {
+  color: var(--purple);
+  font-family: "inter-regular";
+  font-size: 14px;
+  line-height: 22px;
+  text-align: justify;
+  text-decoration: none;
+  border-bottom: 1px solid var(--green);
+  cursor: pointer;
+}
+.news .center .slider2 {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.news .center .slider2 .track {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5vw;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+.news .center .slider2 .track article {
+  width: 25vw;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  transition: 0.5s all ease;
+}
+.news .center .slider2 .track article img {
+  width: 100%;
+  height: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.news .center .slider2 .track article .center_2 {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news .center .slider2 .track article .center_2 div {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.news .center .slider2 .track article .center_2 div p {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 13px;
+}
+.news .center .slider2 .track article .center_2 div h2 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+}
+.news .center .slider2 .track article:hover {
+  box-shadow: 0px 0px 10px rgba(39, 39, 39, 0.2823529412);
+  transform: translateY(-5px);
+}
+.news .center .slider2 .sliderBG {
+  width: 30vw;
+  height: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 100px;
+  scroll-behavior: smooth;
+  background: #b3b3b3;
+}
+.news .center .slider2 .sliderBG .greenPipka {
+  min-width: 32%;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--green);
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color: var(--green);
   transform: translateY(-50%);
 }
 
@@ -1438,6 +1574,4 @@ footer .niz .center div img:hover {
     gap: 15px;
     text-align: center;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

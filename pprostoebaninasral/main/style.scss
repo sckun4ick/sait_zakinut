@@ -502,7 +502,7 @@ header{
 
             article{
                 min-width: calc((100% - 120px) / 7);
-                height: 60%;
+                height: 55%;
                 align-items: center;
                 background: var(--white);
                 border-radius: 6px;
@@ -591,7 +591,7 @@ header{
                 }
 
                 &:hover{
-                    height: 125%;
+                    height: 100%;
                     box-shadow: 0px 5px 15px var(--shadow);
 
                     .item_info{
@@ -1343,6 +1343,155 @@ header{
             }
         }
 
+    }
+}
+
+.news{
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center{
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .title_text{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                color: var(--text-black);
+                font-family: "inter-regular";
+                font-weight: bold;
+                font-size: 36px;
+            }
+
+            a{
+                color: var(--purple);
+                font-family: "inter-regular";
+                font-size: 14px;
+                line-height: 22px;
+                text-align: justify;
+                text-decoration: none;
+                border-bottom: 1px solid var(--green);  
+                cursor: pointer;
+            }
+        }
+
+        .slider2{
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            
+
+            .track{
+                width: 100%;
+                height: 90%;
+                display: flex;
+                flex-direction: row;
+                gap: 2.5vw;
+                align-items: flex-start;
+                overflow-x: hidden; 
+
+                article{
+                    width: 25vw;
+                    height: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-shrink: 0;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: var(--white);
+                    transition: 0.5s all ease;
+
+                    img{
+                        width: 100%;
+                        height: 70%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .center_2{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        div{
+                            width: 80%;
+                            height: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: flex-start;
+
+                            p{
+                                color: var(--text-gray);
+                                font-family: "inter-regular";
+                                font-size: 13px;
+                            }
+
+                            h2{
+                                color: var(--text-black);
+                                font-family: "inter-regular";
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+                        }
+
+                        
+                    }
+                    &:hover{
+                        box-shadow: 0px 0px 10px #27272748;
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+
+            .sliderBG{
+                width: 30vw;
+                height: 3px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                border-radius: 100px;
+                
+                scroll-behavior: smooth;
+
+                background: #b3b3b3;
+
+                .greenPipka{
+                    min-width: 32%;
+                    height: 6px;
+                    border-radius: 100px;
+                    background: var(--green);
+                    cursor: pointer;
+                    position: absolute; 
+                    left: 0;
+                    top: 50%;
+
+                    background-color: var(--green);
+
+                    transform: translateY(-50%); 
+
+                }
+            }
+        }
     }
 }
 
