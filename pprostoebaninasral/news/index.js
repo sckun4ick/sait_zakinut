@@ -2,6 +2,9 @@ let catalog = document.getElementById('katalogoff');
 let catalog_butt = document.getElementById('catalog');
 let catalog_stat = false;
 
+let img1 = document.getElementById('cartinka')
+let img2 = document.getElementById('cartinka2')
+
 let catalogImages = catalog_butt.querySelectorAll('img.list');
 
 catalog_butt.addEventListener('click', () => {
@@ -10,8 +13,12 @@ catalog_butt.addEventListener('click', () => {
 
     if (catalog_stat) {
         catalog.style.display = "flex";
+        img1.style.display = 'none'
+        img2.style.display = 'flex'
     } else {
         catalog.style.display = "none";
+        img2.style.display = 'none'
+        img1.style.display = 'flex'
     }
 
     catalogImages.forEach(img => {
@@ -106,3 +113,4 @@ articles_suda.innerHTML = arti_napol.map(
                     </div>
                 </article>`,
 ).join('');
+

@@ -186,11 +186,11 @@ header .down .center button {
   border-style: none;
   border-radius: 6px;
 }
-header .down .center button .list {
+header .down .center button #img2 {
   display: none;
 }
-header .down .center button .list.active {
-  display: flex;
+header .down .center button #img1 {
+  display: none;
 }
 header .down .center button div {
   height: 100%;
@@ -337,6 +337,7 @@ header .down .center a:hover {
 }
 .katalog_off .center .right .center_right .pervie .first .napolnenie {
   width: 100%;
+  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -380,6 +381,7 @@ header .down .center a:hover {
   align-items: flex-start;
 }
 .news .center .title .verh {
+  width: -moz-min-content;
   width: min-content;
   display: flex;
   flex-direction: row;
@@ -427,7 +429,8 @@ header .down .center a:hover {
 .news .center .aricles article img {
   width: 100%;
   height: 70%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .news .center .aricles article .chimin {
   width: 100%;
@@ -489,6 +492,7 @@ header .down .center a:hover {
   transform: translateY(-5px);
 }
 .news .center .butt_ div {
+  width: -moz-min-content;
   width: min-content;
   height: 50%;
   display: flex;
@@ -517,6 +521,7 @@ header .down .center a:hover {
 }
 .news .chudo {
   width: 5vw;
+  height: -moz-min-content;
   height: min-content;
   position: relative;
   display: flex;
@@ -999,6 +1004,4 @@ footer .niz .center div img:hover {
     gap: 15px;
     text-align: center;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
