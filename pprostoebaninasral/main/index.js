@@ -241,35 +241,54 @@ carousel.innerHTML = aricle_firstSlider.map(
 const leftButton = document.querySelector('.arrow.left')
 const rightButton = document.querySelector('.arrow.right')
 
-let move = 0
+let currentItemIndex = 0 
+
+function updateCarouselPosition() {
+    const items = Array.from(carousel.children)
+    if (items.length === 0) return
+    const itemWidth = items[0].getBoundingClientRect().width
+    const computedStyle = window.getComputedStyle(carousel)
+    const gap = parseFloat(computedStyle.gap) || parseFloat(computedStyle.marginRight) || 0
+    const visibleWidth = carousel.parentElement.getBoundingClientRect().width
+    const itemsInWindow = Math.max(1, Math.floor(visibleWidth / (itemWidth + gap || 1)))
+    const maxIndex = Math.max(0, items.length - itemsInWindow)
+    currentItemIndex = Math.max(0, Math.min(currentItemIndex, maxIndex))
+
+    const offsetPx = -currentItemIndex * (itemWidth + gap)
+    carousel.style.transform = `translateX(${offsetPx}px)`
+
+    leftButton.style.opacity = currentItemIndex === 0 ? '0.5' : '1'
+    rightButton.style.opacity = currentItemIndex >= maxIndex ? '0.5' : '1'
+    
+    console.log(`Индекс: ${currentItemIndex}, Сдвиг: ${offsetPx}px, Видимо карточек: ${itemsInWindow}`)
+}
 
 leftButton.addEventListener('click', () => {
-    if (move < 21){
-        move += 7
-        console.log(`Left Button press: ${move}`)
-        carousel.style.transform = `translateX(${move}vw)`
-        leftButton.style.opacity = '1'
-        rightButton.style.opacity = '1'
-    } else{
-        leftButton.style.opacity = '0.5'
+    if (currentItemIndex > 0) {
+        currentItemIndex--
+        updateCarouselPosition()
     }
-
-    
 })
 
 rightButton.addEventListener('click', () => {
+    const items = Array.from(carousel.children)
+    const itemWidth = items[0]?.getBoundingClientRect().width || 0
+    const computedStyle = window.getComputedStyle(carousel)
+    const gap = parseFloat(computedStyle.gap) || parseFloat(computedStyle.marginRight) || 0
+    const visibleWidth = carousel.parentElement.getBoundingClientRect().width
+    const itemsInWindow = Math.max(1, Math.floor(visibleWidth / (itemWidth + gap || 1)))
+    const maxIndex = Math.max(0, items.length - itemsInWindow)
 
-    if (move > -21){
-        move -= 7
-        console.log(`Right Button press: ${move}`)
-        carousel.style.transform = `translateX(${move}vw)`
-        rightButton.style.opacity = '1'
-        leftButton.style.opacity = '1'
-    } else{
-        rightButton.style.opacity = '0.5'
+    if (currentItemIndex < maxIndex) {
+        currentItemIndex++
+        updateCarouselPosition()
     }
-    
 })
+
+window.addEventListener('resize', updateCarouselPosition)
+document.addEventListener('DOMContentLoaded', updateCarouselPosition)
+window.addEventListener('load', updateCarouselPosition)
+updateCarouselPosition()
 
 const miniItems = document.querySelectorAll('.mini_item');
 const mainImg = document.querySelector('.iside_theme div img');
@@ -384,6 +403,10 @@ main_them.innerHTML = mal.map(
                     <div class="left">
                         <h2>${item.title}</h2>
                         <p>${item.text}</p>
+                        <div class="mobile_prik">
+                            <p>${item.text}</p>
+                            <span>Читать далее</span>
+                        </div>
                         <div class="pr">
                             <h3>${item.price_now}</h3>
                             <h4>${item.price_old}</h4>

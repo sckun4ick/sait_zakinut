@@ -24,7 +24,7 @@
 }
 
 header{
-    width: 100vw;
+    width: 100%;
     height: 20vh;
 
     display: flex;
@@ -185,6 +185,13 @@ header{
                 box-shadow: 0px 5px 10px var(--shadow);
             }
             
+            .tabletShow{
+                display: none;
+            }
+
+            .phoneShow{
+                display: none;
+            }
         }
     }
 
@@ -432,7 +439,7 @@ header{
 }
 
 .product_section{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -449,8 +456,10 @@ header{
         padding: 5vh 0;
     }
 
+    .wow{
+        display: none;
+    }
 
-    //моя карусель
     .carousel{
         width: 100%;
         height: 25vh;
@@ -488,11 +497,12 @@ header{
         }
 
         .carousel_items{
+            min-width: 100%;
             width: 100%;
             height: 100%;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
             position: relative;
             transform: translateX();
@@ -502,7 +512,7 @@ header{
 
             article{
                 min-width: calc((100% - 120px) / 7);
-                height: 55%;
+                height: 7.5vw;
                 align-items: center;
                 background: var(--white);
                 border-radius: 6px;
@@ -591,7 +601,7 @@ header{
                 }
 
                 &:hover{
-                    height: 100%;
+                    height: 32vh;
                     box-shadow: 0px 5px 15px var(--shadow);
 
                     .item_info{
@@ -609,6 +619,10 @@ header{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        .secret{
+            display: none;
+        }
 
         .left_info{
             width: 30%;
@@ -880,7 +894,7 @@ header{
 }
 
 .company{
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     display: flex;
     justify-content: center;
@@ -1054,6 +1068,37 @@ header{
                         line-height: 22px;
                     }
 
+                    .mobile_prik{
+                        width: 60%;
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+
+                        p{
+                            width: 30%;
+                            color: var(--text-black);
+                            font-family: "inter-regular";
+                            font-size: 14px;
+                            line-height: 22px;
+                            overflow: hidden;
+                            margin-bottom: 2.5vh;
+                        }
+
+                        span{
+                            color: var(--purple);
+                            font-family: "inter-regular";
+                            font-size: 14px;
+                            line-height: 22px;
+                            text-align: justify;
+                            text-decoration: none;
+                            border-bottom: 1px solid var(--green);  
+                            cursor: pointer;
+                            margin-top: 2.5vh;
+                        }
+                    }
+
                     .pr{
                         width: 60%;
                         display: flex;
@@ -1219,7 +1264,7 @@ header{
 }
 
 .slider{
-    width: 100vw;
+    width: 100%;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -1234,6 +1279,19 @@ header{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        .secret_mobile{
+            display: none;
+            color: var(--purple);
+            font-family: "inter-regular";
+            font-size: 14px;
+            line-height: 22px;
+            text-align: justify;
+            text-decoration: none;
+            border-bottom: 1px solid var(--green);  
+            cursor: pointer;
+            margin-top: 2.5vh;
+        }
 
         .title_text{
             width: 100%;
@@ -1347,7 +1405,7 @@ header{
 }
 
 .news{
-    width: 100vw;
+    width: 100%;
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -1396,6 +1454,18 @@ header{
             justify-content: space-around;
             align-items: center;
             
+            .secret_mobile{
+                display: none;
+                color: var(--purple);
+                font-family: "inter-regular";
+                font-size: 14px;
+                line-height: 22px;
+                text-align: justify;
+                text-decoration: none;
+                border-bottom: 1px solid var(--green);  
+                margin-top: 2.5vh;
+                cursor: pointer;
+            }
 
             .track{
                 width: 100%;
@@ -1496,7 +1566,7 @@ header{
 }
 
 footer{
-    width: 100vw;
+    width: 100%;
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -1787,40 +1857,296 @@ footer{
         }
     }
 
-    .news{
-        height: auto;
-        min-height: 100vh;
+    .product_section{
+        height: 80vh;
 
-        .center{
-            width: 90%;
+		.center{
+			width: 90%;
+			gap: 3vh;
 
-            .title{
-                h1{
-                    font-size: 28px;
+            .wow{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 5vh;
+
+                .round{
+                    width: 10px;
+                    height: 10px;
+
+                    border: 2px solid var(--green);
+                    border-radius: 100px;
+                }
+
+                .round.active{
+                    width: 10px;
+                    height: 10px;
+
+                    border: 1px solid var(--green);
+                    background: var(--green);
+                    border-radius: 100px;
                 }
             }
+		}
+		.carousel{
+			height: 20vh;
+			.buttons_carousel{
+				bottom: 12vh;
+				padding: 0 1%;
+				.arrow{
+					width: 35px;
+					height: 35px;
+					font-size: 16px;
+				}
+			}
+			.carousel_items{
+				gap: 12px;
+				article{
+					min-width: calc((100% - 48px) / 4);
+					height: 15vw;
+					img{
+						margin-bottom: 1vh;
+					}
+					.item_info{
+						padding: 6px;
+						p{
+							font-size: 12px;
+						}
+						.down_section_cart{
+							button{
+								width: 36px;
+								height: 36px;
+							}
+						}
+					}
+					&:hover{
+						height: 29vh;
+					}
+				}
+			}
+		}
+		.product_info{
+			height: auto;
+			flex-direction: row;
+			gap: 3vh;
 
-            .aricles{
-                height: auto;
-
-                article{
-                    width: 45%;
-                    height: 35vh;
-                    margin-bottom: 20px;
-                }
+            .secret{
+                display: block;
             }
+			.left_info{
+				width: 100%;
+				align-items: flex-start;
+				text-align: center;
+				gap: 1.5vh;
+				h1{
+					font-size: 48px;
+				}
+				h2{
+					font-size: 36px;
+				}
+				.description{
+					max-width: 100%;
+					text-align: left;
+				}
+				.buttons{
+					justify-content: space-evenly;
+                    width: 80%;
+				}
+			}
+			.right_info{
+                display: none;
+			}
+		}
+	}
+	.company{
+		height: auto;
+		min-height: 60vh;
+		padding: 5vh 0;
+		.center_company{
+			width: 90%;
+			flex-direction: column;
+			gap: 4vh;
+			.left{
+				width: 100%;
+				height: auto;
+				h1{
+					font-size: 28px;
+				}
+				p{
+					font-size: 14px;
+					line-height: 22px;
+				}
+			}
+			.right{
+				width: 100%;
+				height: auto;
+				flex-direction: row;
+				div{
+					width: 30%;
+					min-width: 140px;
+					height: auto;
+					padding: 20px 10px;
+					h2{
+						font-size: 13px;
+					}
+				}
+			}
+		}
+	}
+	.action{
+		height: 100vh;
+		.center{
+			width: 90%;
+			height: 90%;
+            justify-content: space-between;
+			.title_text{
+				h1{
+					font-size: 28px;
+				}
+				a{
+					font-size: 13px;
+				}
+			}
+			.main_them{
+				min-height: 60vh;
+				.article{
+					flex-direction: column-reverse;
+					gap: 3vh;
+					.left{
+						width: 100%;
+						height: 65%;
+						align-items: flex-start;
+                        justify-content: space-between;
+						text-align: center;
+						h2{
+							font-size: 22px;
+						}
+						p{
+							text-align: left;
+						}
+						.pr{
+							width: 80%;
+							justify-content: flex-start;
+							h3{
+								font-size: 36px;
+							}
+							h4{
+								font-size: 18px;
+							}
+						}
 
-            .butt_{
-                .purp{
-                    width: 30vh;
-                }
-            }
-        }
+						.butts{
+							width: 100%;
+							justify-content: flex-start;
+                            gap: 5vw;
 
-        .chudo{
-            display: none;
-        }
-    }
+                            .purple{
+                                width: 25%;
+                            }
+
+                            .brod_purp{
+                                width: 25%;
+                            }
+						}
+
+					}
+					.right{
+						width: 100%;
+						height: auto;
+						justify-content: flex-start;
+
+						.cheto{
+							width: 90%;
+                            height: 30vh;
+                            object-fit: cover;
+
+						}
+
+					}
+				}
+			}
+			.line_prikol{
+                justify-content: center;
+                
+				.wow{
+					width: 20%;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+
+                    button{
+                        display: none;
+                    }
+				}
+			}
+		}
+	}
+	.slider{
+		height: 70vh;
+		min-height: 50vh;
+		padding: 5vh 0;
+		.center{
+			width: 90%;
+			.title_text{
+                
+				h1{
+					font-size: 28px;
+				}
+			}
+			.articles{
+				height: auto;
+				gap: 2vh;
+				article{
+					width: 45vw;
+					height: 35vh;
+					div{
+						h3{
+							font-size: 18px;
+						}
+					}
+				}
+			}
+			.scroll_barr{
+				width: 50vw;
+			}
+		}
+	}
+	.news{
+		min-height: 70vh;
+		padding: 5vh 0;
+		.center{
+			width: 90%;
+			.title_text{
+				h1{
+					font-size: 28px;
+				}
+			}
+			.slider2{
+				.track{
+					article{
+						width: 45vw;
+						height: 35vh;
+						margin-bottom: 20px;
+						.center_2{
+							div{
+								h2{
+									font-size: 14px;
+								}
+							}
+						}
+					}
+				}
+				.sliderBG{
+					width: 50vw;
+				}
+			}
+		}
+		.chudo{
+			display: none;
+		}
+	}
 
     footer{
         height: 100vh;
@@ -1832,7 +2158,6 @@ footer{
                 width: 90%;
                 flex-direction: row;
                 flex-wrap: wrap;
-                gap: 30px;
 
                 img{
                     width: 30%;
@@ -1884,6 +2209,431 @@ footer{
             display: none;
         }
     }
+
+    .product_section{
+		.center{
+			width: 95%;
+			gap: 2vh;
+			padding: 3vh 0;
+
+            .secret{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 50%;
+                    height: auto;
+                }
+            }
+
+            .wow{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-top: 5vh;
+
+                .round{
+                    width: 10px;
+                    height: 10px;
+
+                    border: 2px solid var(--green);
+                    border-radius: 100px;
+                }
+
+                .round.active{
+                    width: 10px;
+                    height: 10px;
+
+                    border: 1px solid var(--green);
+                    background: var(--green);
+                    border-radius: 100px;
+                }
+            }
+		}
+		.carousel{
+			min-height: 25vh;
+			.buttons_carousel{
+				bottom: 16vh;
+				.arrow{
+					width: 30px;
+					height: 30px;
+					font-size: 14px;
+				}
+			}
+			.carousel_items{
+				gap: 8px;
+				article{
+					min-width: calc((100% - 16px) / 2);
+					height: 30vw;
+					img{
+						margin-bottom: 0.5vh;
+					}
+					.item_info{
+						padding: 4px;
+						p{
+							font-size: 10px;
+							margin-bottom: 3px;
+						}
+						.down_section_cart{
+							div{
+								h2{
+									font-size: 10px;
+								}
+								span{
+									font-size: 14px;
+								}
+							}
+							button{
+								width: 30px;
+								height: 30px;
+							}
+						}
+					}
+					&:hover{
+						height: 24vh;
+					}
+				}
+			}
+		}
+		.product_info{
+			height: auto;
+			flex-direction: column;
+			gap: 2vh;
+			.left_info{
+				width: 100%;
+				align-items: flex-start;
+				text-align: center;
+				gap: 1vh;
+
+				h1{
+					font-size: 36px;
+				}
+
+				h2{
+					font-size: 24px;
+				}
+
+				.subtitle{
+					font-size: 12px;
+				}
+
+				.description{
+					font-size: 12px;
+					line-height: 18px;
+					max-width: 100%;
+					text-align: left;
+				}
+
+				.buttons{
+                    width: 100%;
+					flex-direction: column;
+					align-items: center;
+					gap: 10px;
+                    
+					.purp, .outline{
+						width: 100%;
+						font-size: 13px;
+					}
+				}
+			}
+			.right_info{
+				width: 100%;
+				height: auto;
+                display: none;
+				.circle_container{
+					width: 90vw;
+					height: 90vw;
+					bottom: 30vh;
+					gap: 10px;
+					.mini_item{
+						width: 55px;
+						height: 55px;
+					}
+				}
+				.iside_theme{
+					top: 1vh;
+					button{
+						width: 32px;
+						height: 32px;
+					}
+					div{
+						width: 40vw;
+						height: 40vw;
+					}
+				}
+				.side_panel{
+					top: 10%;
+					gap: 12px;
+					.icons{
+						gap: 10px;
+						div{
+							width: 34px;
+							height: 34px;
+							img{
+								width: 16px;
+								height: 16px;
+							}
+							.price{
+								right: 40px;
+								font-size: 12px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.company{
+		height: 100vh;
+		.center_company{
+			width: 95%;
+            height: 90%;
+			flex-direction: column;
+            justify-content: space-between;
+
+            
+			.left{
+				width: 100%;
+				height: 4%;
+                display: flex;
+                
+				h1{
+					font-size: 24px;
+					text-align: center;
+				}
+				p{
+					font-size: 13px;
+					line-height: 20px;
+					text-align: left;
+				}
+			}
+			.right{
+				width: 100%;
+				height: min-content;
+				flex-direction: column;
+				gap: 15px;
+				div{
+					width: 100%;
+					height: 20vh;
+					padding: 20px 15px;
+					flex-direction: row;
+					gap: 15px;
+					h2{
+						font-size: 14px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+	.action{
+		min-height: 110vh;
+		.center{
+			width: 95%;
+			height: 90%;
+			.title_text{
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 10px;
+				height: auto;
+                margin-bottom: 5vh;
+				h1{
+					font-size: 22px;
+				}
+				a{
+					font-size: 12px;
+				}
+			}
+			.main_them{
+				min-height: 80%;
+                
+				.article{
+					flex-direction: column-reverse;
+					gap: 2vh;
+
+                    
+					.left{
+						width: 90%;
+						height: auto;
+						align-items: flex-start;
+						text-align: left;
+
+                        
+						h2{
+							font-size: 18px;
+						}
+						p{
+                            display: none;
+							font-size: 13px;
+							line-height: 20px;
+							text-align: left;
+						}
+
+                        .mobile_prik{
+                            display: flex;
+                            height: 19vh;
+                            p{
+                                width: 100%;
+                                display: flex;
+                                height: 60%;
+                            }
+                        }
+						.pr{
+							width: 100%;
+							justify-content: flex-start;
+                            align-items: center;
+							gap: 10px;
+							h3{
+								font-size: 42px;
+							}
+							h4{
+								font-size: 16px;
+							}
+						}
+						.butts{
+							width: 100%;
+							height: auto;
+							flex-direction: column;
+							gap: 10px;
+							.purple, .brod_purp{
+								width: 100%;
+								height: 42px;
+								font-size: 14px;
+							}
+						}
+					}
+					.right{
+						width: 100%;
+						height: auto;
+						justify-content: center;
+						img{
+							width: 90%;
+							box-shadow: 30px 30px 0px #f3f3f3;
+						}
+					}
+				}
+			}
+			.line_prikol{
+                justify-content: center;
+                align-items: center;
+				.wow{
+					width: 30%;
+					button{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.slider{
+		height: auto;
+		min-height: auto;
+		padding: 4vh 0;
+		.center{
+			width: 95%;
+			.title_text{
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 10px;
+				height: auto;
+                margin-bottom: 5vh;
+				h1{
+					font-size: 22px;
+				}
+				a{
+					font-size: 12px;
+				}
+			}
+			.articles{
+				height: auto;
+				flex-direction: column;
+				gap: 15px;
+				article{
+					width: 100%;
+					height: 30vh;
+					img{
+						height: 60%;
+					}
+					div{
+						h3{
+							font-size: 16px;
+						}
+					}
+				}
+			}
+			.scroll_barr{
+                display: none;
+			}
+
+            .secret_mobile{
+                display: flex;
+            }
+		}
+	}
+	.news{
+		height: auto;
+		min-height: auto;
+		padding: 4vh 0;
+		.center{
+			width: 95%;
+			.title_text{
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 10px;
+				height: auto;
+
+                margin-bottom: 3vh;
+				h1{
+					font-size: 25px;
+				}
+				a{
+					font-size: 12px;
+				}
+			}
+			.slider2{
+
+                .secret_mobile{
+                    display: flex;
+                }
+
+				.track{
+					flex-direction: column;
+					gap: 15px;
+					height: auto;
+					article{
+						width: 100%;
+						height: 80vh;
+						min-height: 35vh;
+						margin-bottom: 0;
+						img{
+							height: 75%;
+                            border-radius: 6px;
+						}
+						.center_2{
+							height: 25%;
+							div{
+								h2{
+									font-size: 28px;
+								}
+								p{
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
+				.sliderBG{
+                    display: none;
+					width: 70vw;
+				}
+			}
+		}
+		.chudo{
+			display: none;
+		}
+	}
 
     footer{
         min-height: auto;
