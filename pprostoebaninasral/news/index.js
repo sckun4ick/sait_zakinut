@@ -103,7 +103,7 @@ const arti_napol = [
 const articles_suda = document.getElementById('artby')
 
 articles_suda.innerHTML = arti_napol.map(
-    item => `<article>
+    item => `<article onclick="window.location.href='../text/index.html'">
                     <img src="resource/Новая папка/news_posts (${item.img}).png" alt="">
                     <div class="chimin">
                         <div class="center_2">

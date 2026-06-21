@@ -1,0 +1,1036 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "inter-regular";
+  src: url("./fonts/Inter-Regular.otf") format("opentype");
+}
+:root {
+  --text-black: #272727;
+  --text-gray: #A8A8A8;
+  --green: #82BA01;
+  --green-hover: #9eca36;
+  --white: #ffffff;
+  --bg-wgray: #F9F9F9;
+  --plashka-gray: #EDF0F6;
+  --purple: #6701BA;
+  --purple-hover: #812ec5;
+  --shadow: #979797;
+  --vh-for: 15vh;
+}
+
+header {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .up_section {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .up_section .center {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .up_section .center .inputButt {
+  width: 23%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+header .up_section .center .inputButt input {
+  width: 80%;
+  height: 100%;
+  background: var(--bg-wgray);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-style: none;
+  padding: 5%;
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+header .up_section .center .inputButt button {
+  width: 20%;
+  height: 100%;
+  background: var(--green);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-style: none;
+  transition: 0.5s all ease;
+}
+header .up_section .center .inputButt button:hover {
+  background: var(--green-hover);
+}
+header .up_section .center .mapsStat {
+  width: 17%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .up_section .center .mapsStat .text {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+header .up_section .center .mapsStat .text p {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+header .up_section .center .mapsStat .text div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+header .up_section .center .mapsStat .text div p {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 16px;
+}
+header .up_section .center .numberPhone {
+  width: 19%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .up_section .center .numberPhone div {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+header .up_section .center .numberPhone div p {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 16px;
+}
+header .up_section .center .nepriduma {
+  width: 15%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5%;
+  gap: 10px;
+  border-style: none;
+  border-radius: 6px;
+  background: var(--purple);
+  transition: 0.5s all ease;
+}
+header .up_section .center .nepriduma p {
+  color: var(--white);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+header .up_section .center .nepriduma:hover {
+  background: var(--purple-hover);
+  box-shadow: 0px 5px 10px var(--shadow);
+}
+header .up_section .center .tabletShow {
+  display: none;
+}
+header .up_section .center .phoneShow {
+  display: none;
+}
+header .down {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--plashka-gray);
+}
+header .down .center {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .down .center button {
+  width: 10%;
+  height: 100%;
+  background: var(--purple);
+  transition: 0.5s all ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  gap: 10px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 6px;
+}
+header .down .center button .list {
+  display: none;
+}
+header .down .center button .list.active {
+  display: flex;
+}
+header .down .center button div {
+  height: 100%;
+  border-left: 1px solide var(--white);
+}
+header .down .center button p {
+  color: var(--white);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+header .down .center button:hover {
+  background: var(--purple-hover);
+}
+header .down .center a {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.5s all ease;
+}
+header .down .center a:hover {
+  color: var(--text-gray);
+}
+
+.katalog_off {
+  width: 100%;
+  height: 80vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.katalog_off .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.katalog_off .center .left_menu {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.katalog_off .center .left_menu .add {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.katalog_off .center .left_menu .add div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.katalog_off .center .left_menu .add div .menu_item_active {
+  color: var(--purple);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+}
+.katalog_off .center .left_menu .add div .menu_item {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+}
+.katalog_off .center .left_menu .palka {
+  width: 1px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.katalog_off .center .left_menu .palka .active_palka {
+  width: 300%;
+  height: 20%;
+  background: var(--green);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.katalog_off .center .left_menu .palka .prosto {
+  width: 100%;
+  height: 80%;
+  background: var(--text-gray);
+}
+.katalog_off .center .right {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.katalog_off .center .right .center_right {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.katalog_off .center .right .center_right h1 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 36px;
+  text-decoration: none;
+}
+.katalog_off .center .right .center_right .pervie {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.katalog_off .center .right .center_right .pervie .first {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.katalog_off .center .right .center_right .pervie .first h2 {
+  cursor: pointer;
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  margin-bottom: 5%;
+}
+.katalog_off .center .right .center_right .pervie .first .napolnenie {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.katalog_off .center .right .center_right .pervie .first .napolnenie p {
+  cursor: pointer;
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  line-height: 25px;
+  font-size: 16px;
+  transition: 0.5s all ease;
+}
+.katalog_off .center .right .center_right .pervie .first .napolnenie p:hover {
+  color: var(--text-black);
+}
+
+section {
+  width: 100%;
+  height: 140vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+section .center .title_text {
+  width: auto;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2vw;
+}
+section .center .title_text .norm {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 16px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-gray);
+}
+section .center .title_text .purp {
+  color: var(--purple-hover);
+  font-family: "inter-regular";
+  font-size: 16px;
+  text-decoration: none;
+}
+section .center .first {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+section .center .first .cheto {
+  width: 48%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+section .center .first .cheto h1 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bolder;
+  font-size: 36px;
+  text-decoration: none;
+}
+section .center .first .cheto p {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 18px;
+}
+section .center .first .cheto div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: min-content;
+  gap: 2vw;
+}
+section .center .first .cheto div p:nth-child(1) {
+  color: var(--green);
+  font-family: "inter-regular";
+  font-size: 13px;
+}
+section .center .first .cheto div p:nth-child(2) {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 13px;
+}
+section .center .first img {
+  width: 48%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+section .center .second {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+section .center .second img {
+  width: 48%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+section .center .second p {
+  width: 48%;
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 18px;
+}
+section .center .third {
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+section .center .third p {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 18px;
+}
+section .center .third div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: min-content;
+  gap: 2vw;
+}
+section .center .third div button:nth-child(1) {
+  background: var(--bg-wgray);
+  color: var(--text-gray);
+  border: 1px solid var(--white);
+  font-family: "inter-regular";
+  font-size: 14px;
+  width: 180px;
+  height: 45px;
+  border-style: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+section .center .third div button:nth-child(1):hover {
+  background: var(--white);
+  border: 1px solid var(--shadow);
+  color: var(--text-black);
+}
+section .center .third div button:nth-child(2) {
+  width: 180px;
+  height: 45px;
+  background: var(--white);
+  border: 1px solid var(--purple);
+  border-radius: 6px;
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+section .center .third div button:nth-child(2):hover {
+  box-shadow: 0px 5px 10px var(--shadow);
+}
+section .chudo {
+  width: 5vw;
+  height: min-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 20px;
+  font-family: "inter-regular";
+  left: 2vw;
+  bottom: 35vh;
+}
+section .chudo article {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+section .chudo article p {
+  color: var(--text-gray);
+  font-size: 12px;
+}
+section .chudo article div {
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  transition: 0.5s all ease;
+}
+section .chudo article div h6 {
+  width: 16px;
+  height: 16px;
+  background: var(--purple);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  color: var(--white);
+  position: relative;
+  bottom: 15px;
+  left: 15px;
+}
+section .chudo article div:hover {
+  box-shadow: 0px 5px 10px var(--shadow);
+}
+section .chudo article:nth-child(1) div {
+  background-image: url(resource/icons_for_bb/shopping-bag.svg);
+}
+section .chudo article:nth-child(2) div {
+  background-image: url(resource/icons_for_bb/file.svg);
+}
+section .chudo article:nth-child(3) div {
+  background-image: url(resource/icons_for_bb/user.svg);
+}
+
+footer {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-wgray);
+}
+footer .verh {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0;
+}
+footer .verh .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer .verh .center ul {
+  width: 20%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+footer .verh .center ul h3 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+footer .verh .center ul a {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.5s all ease;
+}
+footer .verh .center ul a:hover {
+  color: var(--text-black);
+}
+footer .verh .center .dali {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .verh .center .dali h3 {
+  color: var(--text-black);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 16px;
+}
+footer .verh .center .dali h1 {
+  color: var(--purple);
+  font-family: "inter-regular";
+  font-weight: bold;
+  font-size: 36px;
+}
+footer .verh .center .dali div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+footer .verh .center .dali div input {
+  width: 40%;
+  height: 2vh;
+  background: var(--white);
+  border-radius: 6px;
+  border-style: none;
+  padding: 5%;
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+footer .verh .center .dali div button {
+  width: 35%;
+  height: 2vh;
+  background: var(--purple);
+  border-radius: 6px;
+  border-style: none;
+  color: var(--white);
+  font-family: "inter-regular";
+  font-size: 14px;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+}
+footer .verh .center .dali div button img {
+  width: 16px;
+  height: 16px;
+}
+footer .verh .center .dali div button:hover {
+  background: var(--purple-hover);
+  box-shadow: 0px 5px 10px var(--shadow);
+}
+footer .niz {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--shadow);
+  background: var(--white);
+}
+footer .niz .center {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .niz .center p {
+  color: var(--text-gray);
+  font-family: "inter-regular";
+  font-size: 14px;
+}
+footer .niz .center div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+footer .niz .center div img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  transition: 0.5s all ease;
+}
+footer .niz .center div img:hover {
+  box-shadow: 0px 5px 10px var(--shadow);
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+  header .up_section .center {
+    width: 90%;
+  }
+  header .up_section .center .inputButt {
+    width: 30%;
+  }
+  header .up_section .center .mapsStat {
+    width: 20%;
+    display: none;
+  }
+  header .up_section .center .numberPhone {
+    width: 22%;
+    display: none;
+  }
+  header .up_section .center .nepriduma {
+    width: 18%;
+    display: none;
+  }
+  header .up_section .center .tabletShow {
+    display: flex;
+    width: 30%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header .up_section .center .tabletShow img {
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+    transition: 0.5s all ease;
+  }
+  header .up_section .center .tabletShow img:hover {
+    box-shadow: 0px 5px 10px var(--shadow);
+    transform: translateY(-5px);
+  }
+  header .down .center {
+    width: 90%;
+  }
+  header .down .center button {
+    width: 20%;
+  }
+  header .down .center button .list {
+    display: none;
+  }
+  header .down .center button .list.active {
+    display: flex;
+  }
+  header .down .center a {
+    font-size: 14px;
+  }
+  header .down .center a:nth-child(4), header .down .center a:nth-child(5), header .down .center a:nth-child(6), header .down .center a:nth-child(7), header .down .center a:nth-child(8) {
+    display: none;
+  }
+  .katalog_off .center {
+    width: 90%;
+  }
+  .katalog_off .center .left_menu {
+    width: 25%;
+  }
+  .katalog_off .center .left_menu .add div .menu_item_active, .katalog_off .center .left_menu .add div .menu_item {
+    font-size: 14px;
+  }
+  .katalog_off .center .right .center_right h1 {
+    font-size: 28px;
+  }
+  .katalog_off .center .right .center_right .pervie .first h2 {
+    font-size: 14px;
+  }
+  .katalog_off .center .right .center_right .pervie .first .napolnenie p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  section {
+    height: 165vh;
+  }
+  section .center {
+    width: 90%;
+    height: 95%;
+  }
+  section .center .title_text {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  section .center .title_text .norm, section .center .title_text .purp {
+    font-size: 14px;
+  }
+  section .center .first {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+  section .center .first .cheto {
+    width: 100%;
+    height: 20vh;
+  }
+  section .center .first .cheto h1 {
+    font-size: 28px;
+  }
+  section .center .first .cheto p {
+    font-size: 14px;
+  }
+  section .center .first img {
+    width: 100%;
+    height: 40vh;
+  }
+  section .center .second {
+    height: auto;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  section .center .second img {
+    width: 100%;
+    height: 40vh;
+  }
+  section .center .second p {
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  section .center .third {
+    height: auto;
+    gap: 15px;
+  }
+  section .center .third p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  section .center .third div {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+  }
+  section .center .third div button:nth-child(1) {
+    width: 40vw !important;
+  }
+  section .center .third div button:nth-child(2) {
+    width: 50vw !important;
+  }
+  section .chudo {
+    display: none;
+  }
+  footer {
+    height: 100vh;
+  }
+  footer .verh .center {
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  footer .verh .center img {
+    width: 30%;
+  }
+  footer .verh .center ul {
+    width: 45%;
+  }
+  footer .verh .center .dali {
+    width: 100%;
+  }
+  footer .niz .center {
+    width: 90%;
+  }
+}
+@media (max-width: 425px) {
+  header {
+    height: 15vh;
+    border-bottom: 1px solid var(--plashka-gray);
+  }
+  header .up_section {
+    height: 10vh;
+  }
+  header .up_section .center {
+    width: 90%;
+  }
+  header .up_section .center .inputButt, header .up_section .center .mapsStat, header .up_section .center .numberPhone, header .up_section .center .nepriduma {
+    display: none;
+  }
+  header .up_section .center .phoneShow {
+    display: flex;
+  }
+  header .up_section .center .phoneShow img {
+    transform: scale(1.5);
+  }
+  header .down {
+    display: none;
+  }
+  section {
+    height: 180vh;
+  }
+  section .center {
+    width: 95%;
+    height: 95%;
+  }
+  section .center .title_text {
+    display: none;
+  }
+  section .center .first {
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+  section .center .first .cheto {
+    width: 100%;
+    height: 40vh;
+  }
+  section .center .first .cheto h1 {
+    font-size: 36px;
+  }
+  section .center .first .cheto p {
+    font-size: 15px;
+  }
+  section .center .first .cheto div {
+    flex-direction: row;
+    gap: 15vw;
+  }
+  section .center .first .cheto div p {
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  section .center .first img {
+    width: 100%;
+    height: 30vh;
+  }
+  section .center .second {
+    height: auto;
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+  section .center .second img {
+    width: 100%;
+    height: 30vh;
+  }
+  section .center .second p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  section .center .third {
+    height: auto;
+    gap: 12px;
+  }
+  section .center .third p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  section .center .third div {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  section .center .third div button {
+    width: 100% !important;
+    height: 7vh !important;
+    font-size: 13px;
+  }
+  section .chudo {
+    display: none;
+  }
+  footer {
+    min-height: auto;
+  }
+  footer .verh {
+    padding: 3vh 0;
+  }
+  footer .verh .center {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  footer .verh .center img {
+    width: 40%;
+  }
+  footer .verh .center ul {
+    width: 100%;
+    align-items: center;
+  }
+  footer .verh .center .dali {
+    width: 100%;
+    align-items: center;
+  }
+  footer .verh .center .dali div {
+    flex-direction: column;
+    gap: 10px;
+  }
+  footer .verh .center .dali div input {
+    width: 100%;
+    border-radius: 6px;
+  }
+  footer .verh .center .dali div button {
+    width: 100%;
+    border-radius: 6px;
+  }
+  footer .niz {
+    height: auto;
+    padding: 20px 0;
+  }
+  footer .niz .center {
+    width: 90%;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

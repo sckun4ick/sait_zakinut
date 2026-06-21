@@ -204,7 +204,7 @@ const arti_napol = [
 const sliderNews = document.getElementById('track')
 
 sliderNews.innerHTML = arti_napol.map(
-    item => `<article>
+    item => `<article onclick="window.location.href='../text/index.html'">
                     <img src="resource/Новая папка/news_posts (${item.img}).png" alt="">
                     <div class="center_2">
                         <div>

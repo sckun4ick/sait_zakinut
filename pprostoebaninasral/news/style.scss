@@ -447,7 +447,7 @@ header{
     align-items: center;
 
     .center{
-        width: 70%;
+        width: 80%;
         height: 90%;
 
         display: flex;
@@ -519,6 +519,7 @@ header{
                 border-radius: 6px;
 
                 transition: 0.5s all ease;
+                cursor: pointer;
                 
                 img{
                     width: 100%;
