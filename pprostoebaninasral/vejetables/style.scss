@@ -685,7 +685,6 @@ section{
                                 height: 4px;
                                 position: absolute;
                                 z-index: 2;
-                                // -webkit-appearance: none;
                                 appearance: none;
                                 background: transparent;
                                 pointer-events: none;
@@ -866,8 +865,72 @@ section{
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-start;
+                gap: 3vh;
 
-                         
+                .up {
+                    width: 100%;
+                    overflow: hidden;
+                    position: relative;
+
+                    .cartoshka {
+                        .center_2 {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            margin-bottom: 25px;
+
+                            h3 {
+                                margin: 0;
+                                font-size: 24px;
+                                font-weight: bold;
+                            }
+
+                            .pusto {
+                                flex-grow: 1; // Занимает всё свободное место, сдвигая полосу вправо
+                            }
+
+                            // Серая дорожка
+                            .scroll_barr {
+                                width: 150px; // Ширина всей дорожки (настройте под макет)
+                                height: 6px;
+                                background-color: #f0f0f0;
+                                border-radius: 3px;
+                                position: relative;
+                                overflow: hidden;
+                            }
+
+                            // Зеленый ползунок
+                            .scroll_tap {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                height: 100%;
+                                width: 40px; // Начальная ширина (JS пересчитает её точнее)
+                                background-color: #79bf14; // Зеленый цвет из макета
+                                border-radius: 3px;
+                                transform-origin: left center;
+                                will-change: transform;
+                            }
+                        }
+                    }
+
+                    .chertopolox {
+                        display: flex;
+                        gap: $card-gap;
+                        transition: transform $transition-speed ease-out;
+                        will-change: transform;
+                        cursor: grab;
+
+                        &:active {
+                            cursor: grabbing;
+                        }
+
+                        & > div {
+                            flex-shrink: 0;
+                            user-select: none;
+                        }
+                    }
+                }
             }
         }
     }

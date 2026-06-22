@@ -100,3 +100,58 @@ novinkiTrack.innerHTML = aricle_firstSlider.map(
                         </div>
                     </article>`,
 ).join('');
+
+let tovar = [
+    {
+        sale: "-40%",
+        news: "Новинка",
+        spec: "Хит",
+        img: "resource/markivka.png",
+        title: "Морковь мытая 0.7-1.0 кг",
+        price_old: "99,90 ₽/кг",
+        price_new: "59,90 ₽/кг",
+        minus: "-",
+        equals: "1",
+        plus: "+"
+    },
+    
+]
+
+let carts_e = document.getElementById('carts_e')
+
+carts_e.innerHTML = tovari.map(
+    item => `<article>
+                <div class="sec2_main_art_top">
+                    <div class="sec2_main_art_top_ins" style="background-image: url('${item.img}')">
+                        <div class="sec1_main_mid_right_karta_inside1">
+                            <div>
+                                <p>${item.sale}</p>
+                            </div>
+                            <div class="sec1_main_mid_right_karta_inside1_sale2">
+                                <p>${item.news}</p>
+                            </div>
+                            <div>
+                                <p>${item.spec}</p>
+                            </div>
+                        </div>
+                    </div>    
+                        
+                </div>
+                <div class="sec2_main_art_bot">
+                    <div class="sec2_main_art_bot_ins">
+                        <h2>${item.title}</h2>
+                        <p>${item.price_old}</p>
+                        <h4>${item.price_new}</h4>
+                        <div class="sec2_main_art_bot_ins_buttons">
+                            <div class="sec1_main_mid_right_karta_inside3_price2">
+                                <button class="counter_btn_minus">${item.minus}</button>
+                                <div class="counter_btn_number">${item.equals}</div>
+                                <button class="counter_btn_plus">${item.plus}</button>
+                            </div>
+                            <button class="sec2_main_art_bot_ins_buttons_shop">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </article>`
+).join('');
+
