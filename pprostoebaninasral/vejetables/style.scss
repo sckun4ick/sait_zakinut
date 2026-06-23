@@ -440,7 +440,7 @@ header{
 
 section{
     width: 100%;
-    height: 300vh;
+    height: 375vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,12 +477,103 @@ section{
             }
         }
 
-        h1{
-            color: var(--text-black);
-            font-family: "inter-regular";
-            font-weight: bolder;
-            font-size: 36px;
-            text-decoration: none; 
+        .cherevichka{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                color: var(--text-black);
+                font-family: "inter-regular";
+                font-weight: bolder;
+                font-size: 36px;
+                text-decoration: none; 
+                margin-bottom: 5vh;
+            }
+
+            .tabletVision{
+                width: min-content;
+                height: auto;
+                display: none;
+                flex-direction: row;
+                gap: 14px;
+
+                p{
+                    color: var(--text-black);
+                    font-family: "inter-regular";
+                    font-size: 14px; 
+                }
+            }
+        }
+        
+
+        .fotTablet_Mobile{
+            width: min-content;
+            height: auto;
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2vw;
+
+            
+
+            .ZAE{
+                width: min-content;
+                height: min-content;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                button{
+                    width: 56px;
+                    height: 56px;
+
+                    border-style: none;
+                    border-radius: 50%;
+                    transition: 0.5s all ease;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    &:hover{
+                        box-shadow: 0px 10px 20px#2727272b;
+                        transform: translateY(-5px);
+                    }
+                }
+
+                a{
+                    height: min-content;
+                    color: var(--purple);
+                    font-family: "inter-regular";
+                    font-size: 14px;
+                    line-height: 22px;
+                    text-align: justify;
+                    text-decoration: none;
+                    border-bottom: 1px solid var(--green);  
+                }
+            }
+
+            .phoneVision{
+                width: min-content;
+                height: auto;
+                display: none;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 14px;
+
+                p{
+                    color: var(--text-black);
+                    font-family: "inter-regular";
+                    font-size: 14px; 
+                }
+            }
         }
 
         .mesivo{
@@ -495,7 +586,7 @@ section{
         
             .left{
                 width: 20%;
-                height: 100%;
+                height: auto;
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
@@ -867,71 +958,615 @@ section{
                 align-items: flex-start;
                 gap: 3vh;
 
-                .up {
+                 .cartoshka{
                     width: 100%;
-                    overflow: hidden;
-                    position: relative;
+                    height: auto;
+                    background: var(--bg-wgray);
+                    border-radius: 6px;
+                    padding: 3vh 0;
 
-                    .cartoshka {
-                        .center_2 {
+                    .center_2{
+                        width: 90%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 2vh;
+
+                        h3{
+                            width: 100%;
+                            color: var(--text-black);
+                            font-family: "inter-regular";
+                            font-weight: bold;
+                            font-size: 28px;
+                        }
+
+                        .chertopolox{
+                            width: 100%;
+                            height: 25vh;
                             display: flex;
-                            align-items: center;
+                            flex-direction: row;
                             gap: 20px;
-                            margin-bottom: 25px;
+                            overflow-x: auto;
 
-                            h3 {
-                                margin: 0;
-                                font-size: 24px;
-                                font-weight: bold;
+                            &::-webkit-scrollbar{
+                                display: none;
                             }
 
-                            .pusto {
-                                flex-grow: 1; // Занимает всё свободное место, сдвигая полосу вправо
-                            }
-
-                            // Серая дорожка
-                            .scroll_barr {
-                                width: 150px; // Ширина всей дорожки (настройте под макет)
-                                height: 6px;
-                                background-color: #f0f0f0;
-                                border-radius: 3px;
-                                position: relative;
+                            article{
+                                flex-shrink: 0;
                                 overflow: hidden;
-                            }
+                                width: 14vw;
+                                height: 15vh;
+                                background: var(--white);
+                                border-radius: 6px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                padding: 15px;
+                                box-shadow: 0px 0px 10px #27272729;
 
-                            // Зеленый ползунок
-                            .scroll_tap {
+                                img{
+                                    width: 80%;
+                                    height: 15vh;
+                                    object-fit: contain;
+                                    margin-bottom: 10px;
+                                }
+
+                                .item_info{
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+                                    opacity: 0;
+
+                                    p{
+                                        color: var(--text-black);
+                                        font-family: "inter-regular";
+                                        font-size: 13px;
+                                        line-height: 16px;
+                                    }
+
+                                    .down_section_cart{
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: center;
+
+                                        div{
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 3px;
+
+                                            h2{
+                                                color: var(--purple);
+                                                font-family: "inter-regular";
+                                                font-size: 11px;
+                                                text-decoration: line-through;
+                                            }
+
+                                            span{
+                                                color: var(--text-black);
+                                                font-family: "inter-regular";
+                                                font-weight: bold;
+                                                font-size: 16px;
+                                            }
+                                        }
+
+                                        button{
+                                            width: 40px;
+                                            height: 40px;
+                                            border-style: none;
+                                            border-radius: 100px;
+                                            cursor: pointer;
+
+                                            img{
+                                                width: 100%;
+                                                height: auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .scroll_barr{
+                            width: 40vw;
+                            max-width: 500px;
+                            height: 4px;
+                            position: relative;
+                            border-radius: 100px;
+                            background: #d0d0d0;
+
+                            .scroll_tap{
+                                width: 25%;
+                                min-width: 40px;
+                                height: 8px;
+                                border-radius: 100px;
+                                background: var(--green);
                                 position: absolute;
                                 left: 0;
-                                top: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+
+                .down{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3vh;
+
+                    .up_up{
+                        width: 100%;
+                        height: 6vh;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .verh1{
+                            width: 60%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 2vw;
+
+                            button{
                                 height: 100%;
-                                width: 40px; // Начальная ширина (JS пересчитает её точнее)
-                                background-color: #79bf14; // Зеленый цвет из макета
-                                border-radius: 3px;
-                                transform-origin: left center;
-                                will-change: transform;
+                                min-width: 15vw;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 2%;
+                                gap: 10px;
+                                background: var(--bg-wgray);
+                                border: 1px solid var(--plashka-gray);
+                                border-radius: 6px;
+                                cursor: pointer;
+                                transition: 0.3s all ease;
+
+                                p{
+                                    color: var(--text-black);
+                                    font-family: "inter-regular";
+                                    font-size: 13px;
+                                }
+
+                                img{
+                                    width: 12px;
+                                    height: 12px;
+                                }
+
+                                &:hover{
+                                    border-color: var(--text-gray);
+                                }
+                            }
+                        }
+
+                        .verh2{
+                            width: 10%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 10px;
+
+                            button{
+                                width: 40px;
+                                height: 40px;
+                                border: 1px solid var(--plashka-gray);
+                                border-radius: 6px;
+                                background: var(--white);
+                                cursor: pointer;
+                                transition: 0.3s all ease;
+
+                                &:hover{
+                                    border-color: var(--text-gray);
+                                }
+
+                                &:nth-child(1){
+                                    background: var(--purple);
+                                    border-color: var(--purple);
+                                }
                             }
                         }
                     }
 
-                    .chertopolox {
+                    .up_down{
+                        width: 100%;
+                        height: 5vh;
                         display: flex;
-                        gap: $card-gap;
-                        transition: transform $transition-speed ease-out;
-                        will-change: transform;
-                        cursor: grab;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 15px;
 
-                        &:active {
-                            cursor: grabbing;
+                        button{
+                            height: 100%;
+                            padding: 0 2vw;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+                            border-radius: 6px;
+                            font-family: "inter-regular";
+                            font-size: 13px;
+                            cursor: pointer;
+                            transition: 0.3s all ease;
+
+                            img{
+                                width: 12px;
+                                height: 12px;
+                            }
+
+                            &:nth-child(1){
+                                background: var(--green);
+                                border: 1px solid var(--green);
+                                color: var(--white);
+
+                                &:hover{
+                                    background: var(--green-hover);
+                                }
+                            }
+
+                            &:nth-child(2){
+                                background: var(--white);
+                                border: 1px solid var(--purple);
+                                color: var(--purple);
+
+                                &:hover{
+                                    box-shadow: 0px 5px 10px var(--shadow);
+                                }
+                            }
+                        }
+                    }
+
+                    .cartochki{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        gap: 2vw;
+
+                        article{
+                            width: calc((100% - 10vw) / 3);
+                            height: 50vh;
+                            background: var(--white);
+                            border-radius: 6px;
+                            overflow: hidden;
+                            transition: 0.5s all ease;
+                            box-shadow: 0px 0px 10px #27272729;
+
+                            &:hover{
+                                box-shadow: 0px 5px 20px var(--shadow);
+                                transform: translateY(-5px);
+                            }
+
+                            .art_top{
+                                width: 100%;
+                                height: 55%;
+                                position: relative;
+
+                                .art_top_img{
+                                    width: 100%;
+                                    height: 100%;
+                                    background-size: contain;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    position: relative;
+
+                                    .art_badges{
+                                        position: relative;
+                                        top: 3vh;
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 8px;
+
+                                        div{
+                                            width: min-content;
+                                            padding: 4px 12px;
+                                            border-top-right-radius: 20px;
+                                            border-bottom-right-radius: 20px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            p{
+                                                font-family: "inter-regular";
+                                                font-size: 16px;
+                                                color: var(--white);
+                                            }
+                                        }
+
+                                        div:nth-child(1){
+                                            background: #BA2201;
+                                        }
+
+                                        div:nth-child(2){
+                                            background: #01BA13;
+                                        }
+
+                                        div:nth-child(3){
+                                            background: #0177BA;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .art_bot{
+                                width: 100%;
+                                height: 45%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .art_bot_ins{
+                                    width: 80%;
+                                    height: 80%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+
+                                    h2{
+                                        color: var(--text-black);
+                                        font-family: "inter-regular";
+                                        font-size: 16px;
+                                        font-weight: normal;
+                                    }
+
+                                    p{
+                                        color: var(--purple);
+                                        font-family: "inter-regular";
+                                        font-size: 16px;
+                                        text-decoration: line-through;
+                                    }
+
+                                    h4{
+                                        color: var(--text-black);
+                                        font-family: "inter-regular";
+                                        font-size: 24px;
+                                        font-weight: bold;
+                                    }
+
+                                    .art_buttons{
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        gap: 10px;
+
+                                        .art_counter{
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            border: 1px solid var(--plashka-gray);
+                                            border-radius: 6px;
+                                            overflow: hidden;
+
+                                            button{
+                                                width: 32px;
+                                                height: 32px;
+                                                border: none;
+                                                background: var(--bg-wgray);
+                                                color: var(--text-black);
+                                                font-family: "inter-regular";
+                                                font-size: 16px;
+                                                cursor: pointer;
+                                                transition: 0.3s all ease;
+
+                                                &:hover{
+                                                    background: var(--green);
+                                                    color: var(--white);
+                                                }
+                                            }
+
+                                            .art_btn_number{
+                                                width: 32px;
+                                                height: 32px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                background: var(--white);
+                                                color: var(--text-black);
+                                                font-family: "inter-regular";
+                                                font-size: 14px;
+                                            }
+                                        }
+
+                                        .art_btn_shop{
+                                            flex: 1;
+                                            height: 36px;
+                                            border: 1px solid var(--purple);
+                                            border-radius: 6px;
+                                            background: var(--white);
+                                            color: var(--purple);
+                                            font-family: "inter-regular";
+                                            font-size: 13px;
+                                            cursor: pointer;
+                                            transition: 0.3s all ease;
+
+                                            &:hover{
+                                                background: var(--purple);
+                                                color: var(--white);
+                                                box-shadow: 0px 5px 10px var(--shadow);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .butt_{
+                        width: 100%;
+                        height: 15vh;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        border-top: 1px solid var(--shadow);
+
+                        .purp{
+                            width: 25vh;
+                            height: 50%;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            background: var(--purple);
+                            border-style: none;
+                            border-radius: 6px;
+
+                            color: var(--white);
+                            font-family: "inter-regular";
+                            font-size: 16px;  
+
+                            cursor: pointer;
+
+                            transition: 0.5s all ease;
                         }
 
-                        & > div {
-                            flex-shrink: 0;
-                            user-select: none;
+                        .purp:hover{
+                            background: var(--purple-hover);
+                            box-shadow: 0px 5px 10px var(--shadow);
+                            transform: translateY(-5px);
+                        }
+
+                        div{
+                            width: min-content;
+                            height: 50%;
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            button{
+                                width: 40px;
+                                height: 40px;
+
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                background: var(--white);
+                                color: var(--text-gray);
+                                font-family: "inter-regular";
+                                font-size: 16px;  
+
+                                border-style: none;
+                                border-radius: 6px;
+
+                                cursor: pointer;
+                                transition: 0.5s all ease;
+                            }
+
+                            button:hover{
+                                background: var(--green-hover);
+                                color: var(--white);
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+
+    .chudo{
+        width: 5vw;
+        height: min-content;
+
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end; 
+        gap: 20px;            
+        font-family: "inter-regular";
+
+        left: 2vw;
+        bottom: 150vh;
+
+        article{
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            p{
+                color: var(--text-gray);
+                font-size: 12px;  
+            }
+
+            div{
+                width: 56px;
+                height: 56px;
+                border-radius: 100px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #ffffff;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: auto;
+
+                transition: 0.5s all ease;
+
+                h6{
+                    width: 16px;
+                    height: 16px;
+                    background: var(--purple);
+                    border-radius: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 11px;
+                    color: var(--white);
+                    position: relative;
+                    bottom: 15px;
+                    left: 15px;
+                }
+            }
+
+            div:hover{
+                box-shadow: 0px 5px 10px var(--shadow);
+            }
+
+        }
+
+        article:nth-child(1) div{
+            background-image: url(resource/icons_for_bb/shopping-bag.svg);
+        }
+
+        article:nth-child(2) div{
+            background-image: url(resource/icons_for_bb/file.svg);
+        }
+
+        article:nth-child(3) div{
+            background-image: url(resource/icons_for_bb/user.svg);
         }
     }
 }
@@ -1229,6 +1864,132 @@ footer{
     }
 
 
+    section{
+        height: 580vh;
+        .center{
+            width: 90%;
+
+            .cherevichka{
+                h1{
+                    margin-bottom: 0vh;
+                }
+                .tabletVision{
+                    display: flex;
+                }
+            }
+            
+            .fotTablet_Mobile{
+                display: flex;
+                margin-bottom: 3vh;
+            }
+
+            .mesivo{
+                .left{
+                    display: none;
+                }
+
+                .right{
+                    width: 100%;
+
+                    .cartoshka{
+                        .center_2{
+                            width: 95%;
+
+                            h3{
+                                font-size: 24px;
+                            }
+
+                            .chertopolox{
+                                height: 20vh;
+
+                                article{
+                                    width: 12vw;
+                                    min-width: 140px;
+
+                                    img{
+                                        height: 12vh;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .down{
+                        .up_up{
+                            .verh1{
+                                width: 70%;
+
+                                button{
+                                    min-width: 12vw;
+                                    padding: 1.5%;
+
+                                    p{
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+
+                            .verh2{
+                                width: 15%;
+                            }
+                        }
+
+                        .cartochki{
+                            gap: 3vw;
+
+                            article{
+                                width: calc((100% - 6vw) / 2);
+                                height: 55vh;
+
+                                .art_top{
+                                    height: 50%;
+                                }
+
+                                .art_bot{
+                                    height: 50%;
+
+                                    .art_bot_ins{
+                                        h2{
+                                            font-size: 14px;
+                                        }
+
+                                        h4{
+                                            font-size: 20px;
+                                        }
+
+                                        .art_buttons{
+                                            .art_counter{
+                                                button{
+                                                    width: 28px;
+                                                    height: 28px;
+                                                    font-size: 14px;
+                                                }
+
+                                                .art_btn_number{
+                                                    width: 28px;
+                                                    height: 28px;
+                                                    font-size: 12px;
+                                                }
+                                            }
+
+                                            .art_btn_shop{
+                                                height: 32px;
+                                                font-size: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .chudo{
+            display: none;
+        }
+    }
+
     footer{
         height: 100vh;
 
@@ -1291,6 +2052,251 @@ footer{
         }
     }
 
+    section{
+        height: 910vh;
+        .center{
+            width: 95%;
+            height: 98%;
+
+            .cherevichka{
+                h1{
+                    font-size: 28px;
+                }
+                .tabletVision{
+                    display: none;
+                }
+            }
+            
+
+            .fotTablet_Mobile{
+                display: flex;
+                width: 100%;
+                margin-bottom: 2vh;
+                gap: 5vw;
+
+                button{
+                    width: 64px;
+                    height: 64px;
+
+                }
+
+                a{
+                    font-size: 18px;
+                }
+
+                .phoneVision{
+                    display: flex;
+                }
+            }
+
+            .mesivo{
+                .left{
+                    display: none;
+                }
+
+                .right{
+                    width: 100%;
+
+                    .cartoshka{
+                        .center_2{
+                            width: 100%;
+
+                            h3{
+                                font-size: 20px;
+                            }
+
+                            .chertopolox{
+                                height: 18vh;
+                                gap: 12px;
+
+                                article{
+                                    width: 35vw;
+                                    min-width: 120px;
+                                    height: 18vh;
+
+                                    img{
+                                        height: 10vh;
+                                        margin-bottom: 5px;
+                                    }
+
+                                    .item_info{
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            .scroll_barr{
+                                width: 60vw;
+                            }
+                        }
+                    }
+
+                    .down{
+                        align-items: center;
+                        .up_up{
+                            flex-direction: column;
+                            gap: 2vh;
+                            height: auto;
+
+                            .verh1{
+                                width: 80%;
+                                flex-direction: column;
+                                gap: 10px;
+
+                                button{
+                                    width: 100%;
+                                    min-width: auto;
+                                    height: 42px;
+
+                                    p{
+                                        font-size: 13px;
+                                    }
+
+                                    img{
+                                        width: 10px;
+                                        height: 10px;
+                                    }
+                                }
+                            }
+
+                            .verh2{
+                                display: none;
+                            }
+                        }
+
+                        .up_down{
+                            width: 80%;
+                            flex-wrap: wrap;
+                            height: auto;
+                            gap: 10px;
+                            justify-content: space-evenly;
+                            align-items: center;
+
+                            button{
+                                width: 35vw;
+                                height: 38px;
+                                font-size: 12px;
+                            }
+                        }
+
+                        .cartochki{
+                            gap: 15px;
+                            flex-direction: column;
+
+                            article{
+                                width: 100%;
+                                height: 50vh;
+
+                                .art_top{
+                                    height: 25vh;
+
+                                    .art_top_img{
+                                        height: 100%;
+                                        .art_badges{
+                                            top: 15px;
+                                            
+
+                                            div{
+                                                padding: 3px 10px;
+                                                height: 2vh;
+
+                                                p{
+                                                    font-size: 11px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .art_bot{
+                                    width: 100%;
+                                    height: 20vh;
+                                    
+                                    .art_bot_ins{
+                                        width: 80%;
+                                        height: auto;
+                                        align-items: flex-start;
+                                        justify-content: flex-start;
+
+
+                                        h2{
+                                            font-size: 15px;
+                                            margin-bottom: 8px;
+                                        }
+
+                                        p{
+                                            font-size: 13px;
+                                        }
+
+                                        h4{
+                                            font-size: 22px;
+                                            margin-bottom: 12px;
+                                        }
+
+                                        .art_buttons{
+                                            flex-direction: column;
+                                            gap: 12px;
+
+                                            .art_counter{
+                                                width: 100%;
+                                                height: 5vh;
+                                                justify-content: space-between;
+
+                                                button{
+                                                    width: 40px;
+                                                    height: 100%;
+                                                    font-size: 18px;
+                                                }
+
+                                                .art_btn_number{
+                                                    width: 40px;
+                                                    height: 100%;
+                                                    font-size: 16px;
+                                                }
+                                            }
+
+                                            .art_btn_shop{
+                                                width: 100%;
+                                                min-height: 5vh;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .butt_{
+                            flex-direction: column;
+                            height: auto;
+                            gap: 15px;
+                            padding: 20px 0;
+
+                            .purp{
+                                width: 100%;
+                                height: 44px;
+                            }
+
+                            div{
+                                width: 100%;
+                                justify-content: center;
+                                gap: 10px;
+
+                                button{
+                                    width: 44px;
+                                    height: 44px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .chudo{
+            display: none;
+        }
+    }
 
     footer{
         min-height: auto;
