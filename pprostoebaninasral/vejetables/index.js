@@ -303,7 +303,7 @@ let tovar = [
 let carts_e = document.getElementById('carts_e')
 
 carts_e.innerHTML = tovar.map(
-    item => `<article>
+    item => `<article onclick="window.location.href='../final/index.html';">
         <div class="art_top">
             <div class="art_top_img" style="background-image: url('${item.img}')">
                 <div class="art_badges">

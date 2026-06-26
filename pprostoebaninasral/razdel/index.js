@@ -1,0 +1,224 @@
+const sliderCart = document.getElementById('articles')
+
+let artForSlider = [
+    {
+        img_slider: "1",
+        title:"Молочная продукция"
+    },
+
+    {
+        img_slider: "2",
+        title:"Мясная продукция"
+    },
+
+    {
+        img_slider: "3",
+        title:"Овощи"
+    },
+
+    {
+        img_slider: "4",
+        title:"Ягоды"
+    },
+
+   {
+        img_slider: "1",
+        title:"Молочная продукция"
+    },
+
+    {
+        img_slider: "2",
+        title:"Мясная продукция"
+    },
+
+    {
+        img_slider: "3",
+        title:"Овощи"
+    },
+
+    {
+        img_slider: "4",
+        title:"Ягоды"
+    },
+    {
+        img_slider: "1",
+        title:"Молочная продукция"
+    },
+
+    {
+        img_slider: "2",
+        title:"Мясная продукция"
+    },
+
+    {
+        img_slider: "3",
+        title:"Овощи"
+    },
+
+    {
+        img_slider: "4",
+        title:"Ягоды"
+    },
+]
+
+sliderCart.innerHTML = artForSlider.map(
+    item => `<article class="artMove" onclick="window.location.href='../vejetables/index.html';">
+                <img src="resource/slider_popular/slider-img (${item.img_slider}).png" alt="">
+                <div>
+                    <h3>${item.title}</h3>
+                </div>
+            </article>`,
+).join('');
+
+let tovar = [
+    {
+        sale: "-40%",
+        news: "Новинка",
+        spec: "Хит",
+        img: "resource/markivka.png",
+        title: "Морковь мытая 0.7-1.0 кг",
+        price_old: "99,90 ₽/кг",
+        price_new: "59,90 ₽/кг",
+        minus: "-",
+        equals: "1",
+        plus: "+"
+    },
+
+    {
+        sale: "-40%",
+        news: "Новинка",
+        spec: "Хит",
+        img: "resource/markivka.png",
+        title: "Морковь мытая 0.7-1.0 кг",
+        price_old: "99,90 ₽/кг",
+        price_new: "59,90 ₽/кг",
+        minus: "-",
+        equals: "1",
+        plus: "+"
+    },
+
+    {
+        sale: "-40%",
+        news: "Новинка",
+        spec: "Хит",
+        img: "resource/markivka.png",
+        title: "Морковь мытая 0.7-1.0 кг",
+        price_old: "99,90 ₽/кг",
+        price_new: "59,90 ₽/кг",
+        minus: "-",
+        equals: "1",
+        plus: "+"
+    },
+
+    {
+        sale: "-40%",
+        news: "Новинка",
+        spec: "Хит",
+        img: "resource/markivka.png",
+        title: "Морковь мытая 0.7-1.0 кг",
+        price_old: "99,90 ₽/кг",
+        price_new: "59,90 ₽/кг",
+        minus: "-",
+        equals: "1",
+        plus: "+"
+    },
+
+]
+
+let carts_e = document.getElementById('carts_e')
+
+carts_e.innerHTML = tovar.map(
+    item => `<article>
+        <div class="art_top">
+            <div class="art_top_img" onclick="window.location.href='../final/index.html';" style="background-image: url('${item.img}')">
+                <div class="art_badges">
+                    <div class="art_badge_sale">
+                        <p>${item.sale}</p>
+                    </div>
+                    <div class="art_badge_news">
+                        <p>${item.news}</p>
+                    </div>
+                    <div class="art_badge_hit">
+                        <p>${item.spec}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="art_bot">
+            <div class="art_bot_ins">
+                <h2>${item.title}</h2>
+                <p>${item.price_old}</p>
+                <h4>${item.price_new}</h4>
+                <div class="art_buttons">
+                    <div class="art_counter">
+                        <button class="art_btn_minus">${item.minus}</button>
+                        <div class="art_btn_number">${item.equals}</div>
+                        <button class="art_btn_plus">${item.plus}</button>
+                    </div>
+                    <button class="art_btn_shop">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </article>`
+).join('');
+
+let catalog = document.getElementById('katalogoff');
+let catalog_butt = document.getElementById('catalog');
+let catalog_stat = false;
+
+let catalogImages = catalog_butt.querySelectorAll('img.list');
+let sliderCarts = catalog_butt.querySelectorAll('articles');
+
+catalog_butt.addEventListener('click', () => {
+    
+    catalog_stat = !catalog_stat;
+
+    if (catalog_stat) {
+        catalog.style.display = "flex";
+    } else {
+        catalog.style.display = "none";
+    }
+
+    catalogImages.forEach(img => {
+        img.classList.toggle('active');
+    });
+});
+
+
+const posmotretBtn = document.getElementById('posmotret')
+const cartsContainer = document.getElementById('articles')
+
+if (posmotretBtn && cartsContainer) {
+    let allShown = false
+
+    function updateCards() {
+        const articles = cartsContainer.querySelectorAll('article')
+        const width = window.innerWidth
+
+        articles.forEach((art, index) => {
+            if (width > 768) {
+                art.style.display = 'flex'
+            } else if (width > 425) {
+                art.style.display = index >= 6 && !allShown ? 'none' : 'flex'
+            } else {
+                art.style.display = index >= 3 && !allShown ? 'none' : 'flex'
+            }
+        })
+
+        if (width <= 768 && articles.length > (width > 425 ? 6 : 3)) {
+            posmotretBtn.style.display = 'block'
+        } else {
+            posmotretBtn.style.display = 'none'
+        }
+
+        posmotretBtn.textContent = allShown ? 'Скрыть' : 'Показать ещё'
+    }
+
+    posmotretBtn.addEventListener('click', () => {
+        allShown = !allShown
+        updateCards()
+    })
+
+    window.addEventListener('resize', updateCards)
+    updateCards()
+}

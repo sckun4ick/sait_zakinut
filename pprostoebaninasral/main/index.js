@@ -350,7 +350,7 @@ catalog_butt.addEventListener('click', () => {
 const sliderCart = document.getElementById('articles')
 
 sliderCart.innerHTML = artForSlider.map(
-    item => `<article class="artMove">
+    item => `<article class="artMove" onclick="window.location.href='../vejetables/index.html';">
                 <img src="resource/slider_popular/slider-img (${item.img_slider}).png" alt="">
                 <div>
                     <h3>${item.title}</h3>
@@ -493,7 +493,6 @@ function updateNewsSlider() {
     newsPipka.style.left = `${progress * maxPipkaPos}px`;
 }
 
-// Инициализация при загрузке и ресайзе
 window.addEventListener('load', updateNewsSlider);
 window.addEventListener('resize', updateNewsSlider);
 
